@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>春风十里不如你</title>
+    <link rel="stylesheet" href="/dist/css/common.css">
+</head>
+<body>
+<div id="container">
+   <div class="page page1" v-show="page == 1">
+        <div class="bg" v-show="isBgHide">
+            <a href="javascript:void(0)" class="bg_rule"></a>
+            <a href="javascript:void(0)" class="bg_start" @click="start"></a>
+        </div>
+        <div class="mask" v-show="isHide">
+           <div class="image"></div>
+        </div>
+   </div>
+   <div class="page quiz page2 " v-show="page == 2">
+       <div class="quiz_bg">
+            <p class="quiz_title">{{question[0].title}}</p>
+            <span class="game_time">{{this.time | filterTime}}秒</span>
+            <div class="answer1" @click="trueAn()">
+                 <img class="img1":src="question[0].sec1Img" alt="">
+                 <span class="tag1">{{question[0].sec1Tag}}</span>
+            </div>
+            <div class="answer2" @click="falseAn()">
+                 <img class="img2" :src="question[0].sec2Img" alt="">
+                 <span class="tag2">{{question[0].sec2Tag}}</span>
+            </div>
+            <span class="page_number">{{page - 1}}/5</span>
+            <div class="res y" v-show="!right">
+                <img src="./src/img/right.png" alt="">
+                <span class="y_right">正确</span>
+            </div>
+            <div class="res x" v-show="!wrong">
+                <img src="./src/img/wrong.png" alt="">
+                <span class="x_wrong">错误</span>
+            </div>
+       </div>
+   </div>
+   <div class="page quiz page3" v-show="page == 3"></div>
+   <div class="page quiz page4" v-show="page == 4"></div>
+   <div class="page quiz page5" v-show="page == 5"></div>
+   <div class="page quiz page6" v-show="page == 6">
+      <button @click="again()">不服再战</button>
+   </div>  
+</div>
+
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<script src="http://cdn.bootcss.com/vue/2.3.2/vue.min.js"></script>
+<script src="/src/js/common.js"></script>
+</body>
+</html>
