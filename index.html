@@ -31,22 +31,94 @@
                  <span class="tag2">{{question[0].sec2Tag}}</span>
             </div>
             <span class="page_number">{{page - 1}}/5</span>
-            <div class="res y" v-show="!right">
-                <img src="./src/img/right.png" alt="">
+            <div class="res" v-show="isRight">
+                <img class="y" src="./src/img/right.png" alt="">
                 <span class="y_right">正确</span>
             </div>
-            <div class="res x" v-show="!wrong">
-                <img src="./src/img/wrong.png" alt="">
+            <div class="res" v-show="isWrong">
+                <img class="x" src="./src/img/wrong.png" alt="">
                 <span class="x_wrong">错误</span>
             </div>
        </div>
    </div>
-   <div class="page quiz page3" v-show="page == 3"></div>
-   <div class="page quiz page4" v-show="page == 4"></div>
-   <div class="page quiz page5" v-show="page == 5"></div>
+   <div class="page quiz page3" v-show="page == 3">
+        <div class="quiz_bg">
+            <p class="quiz_title">{{question[1].title}}</p>
+            <span class="game_time">{{this.time | filterTime}}秒</span>
+            <div class="answer1" @click="trueAn()">
+                 <img class="img1":src="question[1].sec1Img" alt="">
+                 <span class="tag1">{{question[1].sec1Tag}}</span>
+            </div>
+            <div class="answer2" @click="falseAn()">
+                 <img class="img2" :src="question[1].sec2Img" alt="">
+                 <span class="tag2">{{question[1].sec2Tag}}</span>
+            </div>
+            <span class="page_number">{{page - 1}}/5</span>
+            <div class="res" v-show="isRight">
+                <img class="y" src="./src/img/right.png" alt="">
+                <span class="y_right">正确</span>
+            </div>
+            <div class="res" v-show="isWrong">
+                <img class="x" src="./src/img/wrong.png" alt="">
+                <span class="x_wrong">错误</span>
+            </div>
+       </div>
+   </div>
+   <div class="page quiz page4" v-show="page == 4">
+        <div class="quiz_bg">
+            <p class="quiz_title">{{question[2].title}}</p>
+            <span class="game_time">{{this.time | filterTime}}秒</span>
+            <div class="answer1" @click="trueAn()">
+                 <img class="img1":src="question[2].sec1Img" alt="">
+                 <span class="tag1">{{question[2].sec1Tag}}</span>
+            </div>
+            <div class="answer2" @click="falseAn()">
+                 <img class="img2" :src="question[2].sec2Img" alt="">
+                 <span class="tag2">{{question[2].sec2Tag}}</span>
+            </div>
+            <span class="page_number">{{page - 1}}/5</span>
+            <div class="res" v-show="isRight">
+                <img class="y" src="./src/img/right.png" alt="">
+                <span class="y_right">正确</span>
+            </div>
+            <div class="res" v-show="isWrong">
+                <img class="x" src="./src/img/wrong.png" alt="">
+                <span class="x_wrong">错误</span>
+            </div>
+       </div>
+   </div>
+   <div class="page quiz page5" v-show="page == 5">
+        <div class="quiz_bg">
+            <p class="quiz_title">{{question[3].title}}</p>
+            <span class="game_time">{{this.time | filterTime}}秒</span>
+            <div class="answer1" @click="falseAn()">
+                 <img class="img1":src="question[3].sec1Img" alt="">
+                 <span class="tag1">{{question[3].sec1Tag}}</span>
+            </div>
+            <div class="answer2" @click="trueAn()">
+                 <img class="img2" :src="question[3].sec2Img" alt="">
+                 <span class="tag2">{{question[3].sec2Tag}}</span>
+            </div>
+            <span class="page_number">{{page - 1}}/5</span>
+            <div class="res" v-show="isRight">
+                <img class="y" src="./src/img/right.png" alt="">
+                <span class="y_right">正确</span>
+            </div>
+            <div class="res" v-show="isWrong">
+                <img class="x" src="./src/img/wrong.png" alt="">
+                <span class="x_wrong">错误</span>
+            </div>
+       </div>
+   </div>
    <div class="page quiz page6" v-show="page == 6">
+      <p class="percentage">0%</p>
+      <p class="totalTime">{{time | filterTime}}</p>
+      <button @click="again()">不服再战</button>
+   </div> 
+   <div class="page quiz page7" v-show="page == 7">
       <button @click="again()">不服再战</button>
    </div>  
+   
 </div>
 
 <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
