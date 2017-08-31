@@ -5,3 +5,6 @@ es6 + html + css + gulp + vue + stylus
 <br/>
 移动端预览👉 https://youhonglian.github.io/chunfeng-spa/
 
+ 项目展示
+ <br/>
+![image](https://github.com/youhonglian/chunfeng-spa/blob/master/dist/chunfeng.gif)
